@@ -1,2 +1,10 @@
 from mslib.config import config
-print(config.DB_CREDENTIALS)
+import mysql.connector as mysql
+
+mydb = mysql.connect(
+    host=config.DB_CREDENTIALS['host'],
+    user=config.DB_CREDENTIALS['username'],
+    password=config.DB_CREDENTIALS['password']
+)
+
+print(mydb)
