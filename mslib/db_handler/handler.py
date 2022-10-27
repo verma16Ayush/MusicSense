@@ -1,10 +1,7 @@
-from mslib.config import config
-import mysql.connector as mysql
+from .connect import my_db
 
-mydb = mysql.connect(
-    host=config.DB_CREDENTIALS['host'],
-    user=config.DB_CREDENTIALS['username'],
-    password=config.DB_CREDENTIALS['password']
-)
+class MySQLDB():
 
-print(mydb)
+    def __init__(self):
+        pass
+    
