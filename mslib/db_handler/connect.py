@@ -1,5 +1,5 @@
-from mslib.config import config
 import mysql.connector
+from mslib.config import config
 
 my_db = mysql.connector.connect(
     host=config.DB_CREDENTIALS['host'],
