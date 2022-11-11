@@ -107,3 +107,7 @@ FINGERPRINT_REDUCTION = 20
 
 # Number of results being returned for file recognition
 TOPN = 2
+
+# Misc
+SAVE_SPECGRAM = True
+SHOW_PLOT = True

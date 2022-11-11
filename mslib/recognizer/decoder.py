@@ -1,9 +1,8 @@
 import audioop
 import fnmatch
 import os
-from email.mime import audio
 from hashlib import sha1
-from typing import Any, List, Tuple
+from typing import List, Tuple
 
 import numpy as np
 from pydub import AudioSegment
@@ -71,7 +70,7 @@ def read(file_name: str, limit: int | None = None) -> Tuple[List[np.ndarray], in
         if limit:
             audiofile = audiofile[:limit * 1000]
 
-        data : np.ndarray = np.fromstring(str(audiofile.raw_data), np.int16, sep='')
+        data : np.ndarray = np.fromstring(audiofile.raw_data, np.int16, sep='') # type: ignore
 
         channels  : List[np.ndarray] = []
         for chn in range(audiofile.channels):
