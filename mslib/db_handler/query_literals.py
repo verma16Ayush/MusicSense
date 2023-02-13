@@ -81,7 +81,6 @@ SELECT_SONGS = f"""
         ,   `{FIELD_TOTAL_HASHES}`
         ,   `date_created`
         FROM `{SONGS_TABLENAME}`
-        WHERE `{FIELD_FINGERPRINTED}` = 1;
     """
 
 # DROPS

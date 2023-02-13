@@ -92,3 +92,7 @@ def get_audio_name_from_path(file_path: str) -> str:
     :return: file name
     """
     return os.path.splitext(os.path.basename(file_path))[0]
+
+# def learn_songs_from_directory(path: str, reset_tables:bool = False):
+#     if reset_tables:
+        
