@@ -1,6 +1,7 @@
 from .connect import my_db
 from .query_literals import *
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Any
+from itertools import groupby
 from pprint import pprint
 import json
 class MySQLDB():
@@ -73,6 +74,10 @@ class MySQLDB():
         # pprint(songs, indent=2)
         return songs
 
+    def get_song_by_id(self, song_id)->Dict[str, str]:
+        self.cursor.execute(SELECT_SONG, (song_id,))
+        return self.cursor.fetchone()
+
     def return_matches(self, hashes: List[Tuple[str, int]],
                        batch_size: int = 1000) -> Tuple[List[Tuple[int, int]], Dict[int, int]]:
         """
@@ -109,9 +114,9 @@ class MySQLDB():
             self.cursor.execute(query, values[index: index + batch_size], )
             cur = self.cursor.fetchall()
             for resitem_dict in cur:
-                sid = resitem_dict['song_id']
-                hsh = resitem_dict['HEX(`hash`)']
-                offset = resitem_dict['offset']
+                sid = resitem_dict[FIELD_SONG_ID]
+                hsh = resitem_dict[f'HEX(`{FIELD_HASH}`)']
+                offset = resitem_dict[FIELD_OFFSET]
 
                 if sid not in dedup_hashes.keys():
                     dedup_hashes[sid] = 1
@@ -122,6 +127,7 @@ class MySQLDB():
                     results.append((sid, offset - song_sampled_offset))
 
         return results, dedup_hashes
+
 
     def __exit__(self):
         self.cursor.close()
