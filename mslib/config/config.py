@@ -77,12 +77,12 @@ DEFAULT_OVERLAP_RATIO = 0.5
 
 # Degree to which a fingerprint can be paired with its neighbors. Higher values will
 # cause more fingerprints, but potentially better accuracy.
-DEFAULT_FAN_VALUE = 5  # 15 was the original value.
+DEFAULT_FAN_VALUE = 10  # 15 was the original value.
 
 # Minimum amplitude in spectrogram in order to be considered a peak.
 # This can be raised to reduce number of fingerprints, but can negatively
 # affect accuracy.
-DEFAULT_AMP_MIN = 10
+DEFAULT_AMP_MIN = 7
 
 # Number of cells around an amplitude peak in the spectrogram in order
 # for MusicSense to consider it a spectral peak. Higher values mean less
@@ -106,7 +106,7 @@ PEAK_SORT = True
 FINGERPRINT_REDUCTION = 20
 
 # Number of results being returned for file recognition
-TOPN = 2
+TOPN = 3
 
 # Misc
 SAVE_SPECGRAM = False

@@ -6,6 +6,6 @@
             "request": "launch",
             "program": "${workspaceFolder}/hello.py",
             "console": "integratedTerminal"
-        }
+        },
     ]
 }

@@ -4,6 +4,7 @@
     "python.linting.lintOnSave": true,
     "python.linting.pylintEnabled": false,
     "python.linting.mypyEnabled": true,
+    "files.autoSave": "onWindowChange",
     "python.linting.enabled": true,
     "python.linting.mypyCategorySeverity.error": "Error"
 }
