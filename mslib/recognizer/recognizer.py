@@ -44,7 +44,7 @@ class Recognizer():
         num_songs = 0
         total_hashes_inserted = 0
 
-        start_time = time.process_time()
+        start_time = time.time()
         for file in find_files(path, ['mp3', '.wav']):
             num_songs += 1
             data = read(file[0])
@@ -77,8 +77,9 @@ class Recognizer():
 
                 total_hashes_inserted += len(fingerprints)
 
-        time_taken = time.process_time() - start_time
-
+        time_taken = time.time() - start_time
+        (t_min, t_sec) = divmod(time_taken,60)
+        (t_hour,t_min) = divmod(t_min ,60) 
         print(f'''
         *********************************************************
         *                      SUMMARY                          *
@@ -86,7 +87,7 @@ class Recognizer():
 
         * total songs processed: {num_songs}
         * total fingerprints inserted: {total_hashes_inserted}
-        * time taken: {time_taken}
+        * time taken: {t_hour} hour : {t_min} min : {t_sec} sec
 
         *********************************************************
         ''')

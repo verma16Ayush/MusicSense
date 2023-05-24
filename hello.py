@@ -13,7 +13,7 @@ recog = recognizer.Recognizer()
 recog.fingerprint_directory('./data')
 res = recog.recognize_from_microphone()
 pprint(res)
-print('---------------')
+# print('---------------')
 # res2 = recog.match_song_from_file('./data/Brad-Sucks--Total-Breakdown.mp3', 20)
 # pprint(res2)
 
