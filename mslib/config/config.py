@@ -6,10 +6,10 @@ load_dotenv()
 
 # database configuration / credentials. taken from the .env file
 DB_CREDENTIALS : Dict[str, str] = {
-    'db_name' : os.getenv('DATABASE_NAME') or '',
-    'username' : os.getenv('DATABASE_USERNAME') or '',
-    'password' : os.getenv('DATABASE_PASSWORD') or '',
-    'host' : os.getenv('DATABASE_HOST') or '',
+    'db_name' : os.getenv('MYSQL_DATABASE') or '',
+    'username' : os.getenv('MYSQL_DATABASE_USERNAME') or '',
+    'password' : os.getenv('MYSQL_ROOT_PASSWORD') or '',
+    'host' : os.getenv('MYSQL_DATABASE_HOST') or '',
 }
 
 

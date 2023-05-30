@@ -1,8 +1,8 @@
 # Use an official Python runtime as the base image
 FROM ubuntu:latest
 
-RUN mkdir /home/MusicSense
-COPY . /home/MusicSense
+RUN mkdir /MusicSense
+COPY . /MusicSense
 
 # Install required system dependencies
 RUN apt-get update \
@@ -20,6 +20,6 @@ RUN apt-get update \
 # RUN apt -y install portaudio19-dev
 
 # Install NumPy and SciPy
-RUN pip install -r /home/MusicSense/requirements.txt
-
-RUN ["uvicorn", "main:app", "--reload", "--host", "192.168.226.203"]
+RUN pip install -r /MusicSense/requirements.txt
+WORKDIR /MusicSense
+# RUN ["uvicorn", "main:app"]
