@@ -26,7 +26,7 @@ app.add_middleware(
 db = mslib.db_handler.handler.MySQLDB()
 recog = recognizer.Recognizer()
 
-
+recog.fingerprint_directory('./data')
 
 @app.get("/")
 async def root():
