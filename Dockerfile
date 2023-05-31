@@ -15,6 +15,7 @@ RUN apt-get update \
         python3 \
         python3-dev \
         python3-pip \
+        ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
 # RUN apt -y install portaudio19-dev
