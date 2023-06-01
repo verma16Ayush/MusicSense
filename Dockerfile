@@ -23,4 +23,4 @@ RUN apt-get update \
 # Install NumPy and SciPy
 RUN pip install -r /MusicSense/requirements.txt
 WORKDIR /MusicSense/
-CMD ["uvicorn", "-u" "main:app"]
+CMD ["uvicorn", "main:app", "--port", "8000"]
